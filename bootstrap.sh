@@ -44,7 +44,7 @@ ansible_deps() {
 }
 ansible() {
     info "Running Ansible"
-    $PROVISION_DIR/bin/ansible-playbook $PROVISION_DIR/repo/playbook.yml -e install_user=`whoami`  -i $PROVISION_DIR/repo/ansible/hosts --ask-sudo-pass
+    $PROVISION_DIR/bin/ansible-playbook $PROVISION_DIR/repo/playbook.yml -e install_user=`whoami`  -i $PROVISION_DIR/repo/inventory --ask-sudo-pass
 }
 
 clone_repo() {
