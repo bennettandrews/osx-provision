@@ -3,6 +3,18 @@
 PROVISION_DIR=/tmp/provision
 GITHUB_REPO=https://github.com/bennettandrews/osx-provision.git
 
+fancy_echo() {
+    echo $1
+}
+
+info() {
+    fancy_echo " INFO | $1"
+}
+
+warn() {
+    fancy_echo " WARN | $1"
+}
+
 function pause(){
     printf "\n%b\n" "$*"
     read -p ""
@@ -30,13 +42,17 @@ ansible_deps() {
     virtualenv $PROVISION_DIR
     /tmp/provision/bin/pip -q install ansible
 }
+ansible() {
+    info "Running Ansible"
+    $PROVISION_DIR/bin/ansible-playbook $PROVISION_DIR/repo/playbook.yml -e install_user=`whoami`  -i $PROVISION_DIR/repo/ansible/hosts --ask-sudo-pass
+}
 
 clone_repo() {
-    git clone -q  $PROVISION_DIR/repo
+    git clone -q $GITHUB_REPO $PROVISION_DIR/repo
 }
 
 main() {
-    xcode_cli_tools
+    #xcode_cli_tools
     clone_repo
     ansible_deps
     ansible

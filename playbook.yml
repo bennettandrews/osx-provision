@@ -1,0 +1,8 @@
+---
+- name: osx
+  hosts: local
+  roles:
+    - osx
+    - brew
+    - casks
+    

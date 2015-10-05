@@ -1,1 +1,1 @@
-laptop ansible_connection=local
+local ansible_connection=local
