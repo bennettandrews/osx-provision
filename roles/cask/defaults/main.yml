@@ -1,0 +1,17 @@
+---
+casks:
+  taps:
+    - "caskroom/cask"
+    - "caskroom/versions"
+    
+  packages:
+    - "java"
+    - "dropbox"
+    - "caffine"
+    - "google-chrome"
+    - "google-hangouts"
+    - "intellij-idea-ce"
+    - "iterm2"
+    - "viscosity"
+    - "virtualbox"
+

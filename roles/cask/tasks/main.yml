@@ -1,0 +1,13 @@
+---
+- name: "setup taps"
+  homebrew_tap: name={{item}} state=present
+  with_items: casks.taps
+- name: "update brew"
+  homebrew: update_homebrew=yes
+- name: "install cask packages"
+  homebrew: name=brew-cask state=latest
+- name: "install casks"
+  homebrew_cask: name={{item}} state=installed
+  environment:
+    HOMEBREW_CASK_OPTS: "--appdir=/Applications"
+  with_items: casks.packages

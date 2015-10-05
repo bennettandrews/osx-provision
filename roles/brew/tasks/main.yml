@@ -1,0 +1,11 @@
+---
+- name: "install homebrew"
+  git: repo=https://github.com/Homebrew/homebrew dest=/usr/local
+
+- name: "update homebrew"
+  homebrew: update_homebrew=yes
+
+- name: "install packages"
+  homebrew: name={{item.package}} install_options={{item.options | default("") }} state=latest
+  with_items: brew.packages
+  

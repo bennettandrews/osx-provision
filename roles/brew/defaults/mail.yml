@@ -1,0 +1,15 @@
+---
+brew:
+  packages:
+    - package: "openssl"
+    - package: "awscli"
+    - package: "zsh"
+    - package: "tmux"
+    - package: "brew-cask"
+    - package: "emacs"
+    - package: "autojump"
+    - package: "scala"
+    - package: "sbt"
+    - package: "wget"
+    - package: "maven"
+    
