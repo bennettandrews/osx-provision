@@ -7,7 +7,6 @@ casks:
   packages:
     - "java"
     - "dropbox"
-    - "caffine"
     - "google-chrome"
     - "google-hangouts"
     - "intellij-idea-ce"
